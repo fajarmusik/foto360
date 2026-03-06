@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>360 Image Viewer by Fajar Fitrianto</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css"/>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+
+    <style>
+        body { margin: 0; padding: 0; font-family: sans-serif; }
+        #panorama {
+            width: 100%;
+            height: 100vh; /* Full screen */
+            background-color: #000;
+        }
+        .title-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            background: rgba(0,0,0,0.5);
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="title-overlay">Preview 360° ala Street View</div>
+    <div id="panorama"></div>
+
+    <script>
+        pannellum.viewer('panorama', {
+            "type": "equirectangular",
+            "panorama": "PANO_20240204_070821-01.jpeg", // Ganti dengan URL fotomu
+            "autoLoad": true,
+            "autoRotate": -2, // Berputar pelan otomatis
+            "compass": true  // Menampilkan kompas
+        });
+    </script>
+
+</body>
+</html>
